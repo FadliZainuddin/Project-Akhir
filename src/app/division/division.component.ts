@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Divison } from '../model/divison.model';
+import { DivisionService } from '../services/division.service';
 
 @Component({
   selector: 'app-division',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DivisionComponent implements OnInit {
 
-  constructor() { }
+  divisions?:Divison[];
+  currentDivision:Divison={};
+  name='';
+  constructor(private divisionService:DivisionService) { }
 
   ngOnInit(): void {
+    this.retrieveDivision()
   }
 
+  retrieveDivision():void{
+    this.divisionService.getAll()
+      .subscribe(
+        data=>{
+          this.divisions=data;
+          console.log(data);
+        },
+        error=>{
+          console.log(error);
+        }
+      )
+  }
 }
