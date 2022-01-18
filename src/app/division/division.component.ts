@@ -29,6 +29,15 @@ export class DivisionComponent implements OnInit {
           console.log(error)
         }
       )
-
+    this.divisionService.postAll()
+    .subscribe(
+      data=>{
+        this.divisions=data;
+          console.log(data);
+        },
+        error=>{
+          console.log(error)
+        }
+    )
   }
 }

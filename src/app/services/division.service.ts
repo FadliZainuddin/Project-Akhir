@@ -14,4 +14,7 @@ export class DivisionService {
   getAll():Observable<Division[]>{
     return this.http.get<Division[]>(baseUrl);
   }
-}
+  postAll():Observable<Division[]>{
+    return this.http.get<Division[]>(baseUrl);
+  }
+} 
