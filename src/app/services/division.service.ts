@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Divison } from '../model/divison.model';
+import { Division } from '../model/division.model';
 
-const baseUrl = 'http://spa-api.aqiladigital.com/api/divisions'
+const baseUrl = 'https://spa-api.aqiladigital.com/api/divisions'
 @Injectable({
   providedIn: 'root'
 })
 export class DivisionService {
 
   constructor(private http:HttpClient) { }
-  
-  getAll():Observable<Divison[]>{
-    return this.http.get<Divison[]>(baseUrl);
+
+  getAll():Observable<Division[]>{
+    return this.http.get<Division[]>(baseUrl);
   }
 }

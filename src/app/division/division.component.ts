@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Divison } from '../model/divison.model';
+import { Division } from '../model/division.model';
 import { DivisionService } from '../services/division.service';
 
 @Component({
@@ -9,8 +9,8 @@ import { DivisionService } from '../services/division.service';
 })
 export class DivisionComponent implements OnInit {
 
-  divisions?:Divison[];
-  currentDivision:Divison={};
+  divisions?:Division[];
+  currentDivision:Division={};
   name='';
   constructor(private divisionService:DivisionService) { }
 
@@ -26,8 +26,9 @@ export class DivisionComponent implements OnInit {
           console.log(data);
         },
         error=>{
-          console.log(error);
+          console.log(error)
         }
       )
+
   }
 }
