@@ -4,8 +4,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DivisionComponent } from './division/division.component';
 
 const routes: Routes = [
-  {path:"dashboard", component:DashboardComponent},
-  {path:"divisi", component:DivisionComponent}
+  {path:"dashboard",component:DashboardComponent},
+  {path:"divisi",component:DivisionComponent},
 ];
 
 @NgModule({
