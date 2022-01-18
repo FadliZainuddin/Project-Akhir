@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Division } from '../model/division.model';
 import { DivisionService } from '../services/division.service';
+import { Divisi } from '../tambah/divisi.tambah';
 
 @Component({
   selector: 'app-division',
@@ -29,15 +30,15 @@ export class DivisionComponent implements OnInit {
           console.log(error)
         }
       )
-    this.divisionService.postAll()
-    .subscribe(
-      data=>{
-        this.divisions=data;
+    this.divisionService.deleteAll()
+      .subscribe(
+        data=>{
+          this.divisions=data;
           console.log(data);
         },
         error=>{
           console.log(error)
         }
-    )
+      )
   }
 }
